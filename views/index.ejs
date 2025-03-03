@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>PointsPlus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>PointsPlus</h1>
+      <div id="chart-container">
+        <canvas id="my-chart"></canvas>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+
+      const data = [
+        { house: "Blake", count: 10 },
+        { house: "Halberg", count: 20 },
+        { house: "Hillary", count: 15 },
+        ];
+
+        const ctx = document.querySelector('#my-chart');
+        const mychart = new Chart(
+          ctx,
+          {
+            type: 'bar',
+      data: {
+        labels: data.map(row => row.house),
+        datasets: [
+          {
+          data: data.map(row => row.count),
+          backgroundColor: ['rgb(0,0,255)','rgb(225,0,0)','rgb(255,255,0)']
+          }
+        ]
+      }
+          }
+        )
+    </script>
+  </body>
+</html>
