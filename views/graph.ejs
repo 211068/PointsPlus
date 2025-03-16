@@ -1,14 +1,12 @@
-  <body>
-    <div id="main-container">
-      <h1>PointsPlus</h1>
-
-      <div id="chart">
-        <canvas id="my-chart"></canvas>
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
-    <script>
-     fetch("data/data.json")
+<div id="main-container">
+  <h1>PointsPlus</h1>
+  <div id="chart-container">
+    <canvas id="my-chart"></canvas>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+<script>
+  fetch("data/data.json")
     .then(function (response) {
       if (response.ok == true) return response.json();
     })
@@ -38,6 +36,4 @@
       },
     });
   }
-    </script>
-  </body>
-</html>
+</script>

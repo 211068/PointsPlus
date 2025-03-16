@@ -7,6 +7,7 @@ app.use(express.static('public'));
 app.use('/css', express.static(__dirname + "public/css"))
 app.use('/js', express.static(__dirname + "public/js"))
 app.use('/img', express.static(__dirname + "public/img"))
+app.use('/data', express.static(__dirname + 'public/data'))
 
 app.use(expressLayouts);
 app.set('view engine', 'ejs')
@@ -16,10 +17,10 @@ app.get('/', (req, res) => {
     res.render('index');
   });
 
-// Add the route for the top page
-//app.get('/top', (req, res) => {
-    //res.render('top.ejs');
-  //});
+//Add the route for the top page
+app.get('/form', (req, res) => {
+    res.render('form.ejs');
+  });
 
 
 
