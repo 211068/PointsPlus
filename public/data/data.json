@@ -1,5 +1,22 @@
 [
-    { "house": "Blake", "count": 10 },
-    { "house": "Halberg", "count": 20 },
-    { "house": "Hillary", "count": 15 }
+  {
+    "house": "Blake",
+    "count": 12
+  },
+  {
+    "house": "Halberg",
+    "count": 34
+  },
+  {
+    "house": "hillary",
+    "count": 5
+  },
+  {
+    "house": "",
+    "count": 0
+  },
+  {
+    "house": "",
+    "count": 0
+  }
 ]
