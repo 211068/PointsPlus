@@ -4,7 +4,7 @@ const app = express();
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const path = require('path');
-const port = 5000
+const port = 3000
 
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + "public/css"))
@@ -38,18 +38,20 @@ app.get('/form', (req, res) => {
     res.render('form.ejs');
   });
 
+// 404 Error Middleware (should be the last route)
+app.use((req, res) => {
+  res.status(404).render("404"); // Render 404.ejs
+});
 
 // Handle form submission
 app.post('/submit', (req, res) => {
-  const { house1, count1, house2, count2, house3, count3, house4, count4, house5, count5 } = req.body;
+  const { house1, count1, house2, count2, house3, count3} = req.body;
 
   // Create new JSON structure
   const newData = [
       { house: house1, count: Number(count1) },
       { house: house2, count: Number(count2) },
       { house: house3, count: Number(count3) },
-      { house: house4, count: Number(count4) },
-      { house: house5, count: Number(count5) }
   ];
 
   // Save new data to JSON file (overwrite existing data)

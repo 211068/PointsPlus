@@ -1,43 +1,48 @@
-  <body>
-    <div id="main-container">
-      <h1>PointsPlus</h1>
+<body>
+  <div id="main-container">
+    <h1>PointsPlus</h1>
 
-      <div id="chart">
-        <canvas id="my-chart"></canvas>
-      </div>
+    <div id="chart">
+      <canvas id="my-chart" width="1450" height="750"></canvas>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
-    <script>
-     fetch("/data/data.json")
-    .then(function (response) {
-      if (response.ok == true) return response.json();
-    })
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <script>
+    fetch("/data/data.json")
+      .then(function (response) {
+        if (response.ok == true) return response.json();
+      })
 
-    .then(function (data) {
-      createChart(data, "bar");
-    });
+      .then(function (data) {
+        createChart(data, "bar");
+      });
 
-  const ctx = document.querySelector("#my-chart");
+    const ctx = document.querySelector("#my-chart");
 
-  function createChart(data, type){
-    const mychart = new Chart(ctx, {
-      type: type,
-      data: {
-        labels: data.map((row) => row.house),
-        datasets: [
-          {
-            data: data.map((row) => row.count),
-            backgroundColor: ["rgb(0,0,255)", "rgb(225,0,0)", "rgb(255,255,0)"],
-          },
-        ],
+    function createChart(data, type) {
+      const mychart = new Chart(ctx, {
+        type: type,
+        data: {
+          labels: data.map((row) => row.house),
+          datasets: [
+            {
+              data: data.map((row) => row.count),
+              backgroundColor: [
+                "rgb(0,0,255)",
+                "rgb(225,0,0)",
+                "rgb(255,255,0)",
+              ],
+            },
+          ],
+        },
         options: {
-          legend: {
-            display: false,
+          plugins: {
+            legend: {
+              display: false, // This will remove the legend
+            },
           },
         },
-      },
-    });
-  }
-    </script>
-  </body>
-</html>
+      });
+    }
+  </script>
+</body>
