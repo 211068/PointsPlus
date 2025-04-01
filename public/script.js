@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("dataForm");
   
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener("/submit", async (event) => {
       event.preventDefault();
   
       // Create form data object

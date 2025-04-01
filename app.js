@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
     res.render('index');
   });
 
+app.post('/', (req, res) => {
+  res.render('index');
+});
+
 //Add the route for the top page
 app.get('/form', (req, res) => {
     res.render('form.ejs');
@@ -59,7 +63,6 @@ app.post('/submit', (req, res) => {
 
   res.redirect('/');
 });
-
 
 
 app.listen(port, () => console.info(`App listening on port ${port}`));
