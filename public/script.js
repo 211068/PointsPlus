@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formObject),
         });
-  
+        // Check if the response is ok
         const result = await response.json();
         document.getElementById("message").innerText = result.message;
         form.reset();

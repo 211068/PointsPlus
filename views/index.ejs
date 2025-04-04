@@ -8,17 +8,18 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
   <script>
+    // This is the function that will be called when the page loads
+    // It will fetch the data from the server and create the chart
     fetch("/data/data.json")
       .then(function (response) {
         if (response.ok == true) return response.json();
       })
-
       .then(function (data) {
         createChart(data, "bar");
       });
 
     const ctx = document.querySelector("#my-chart");
-
+      // This is the context for the chart (how I want it to be displayed)
     function createChart(data, type) {
       const mychart = new Chart(ctx, {
         type: type,
