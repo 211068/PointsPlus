@@ -3,7 +3,7 @@
     <h1>PointsPlus</h1>
 
     <div id="chart">
-      <canvas id="my-chart" width="1450" height="750"></canvas>
+      <canvas id="my-chart" width="1060" height="560"></canvas>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
@@ -28,7 +28,7 @@
           datasets: [
             {
               data: data.map((row) => row.count),
-              backgroundColor: ["#333333"],
+              backgroundColor: data.map((row) => row.color),
             },
           ],
         },
@@ -36,6 +36,11 @@
           plugins: {
             legend: {
               display: false, // This will remove the legend
+              labels: {
+                    font: {
+                        size: 50
+                    }
+                }
             },
           },
         },

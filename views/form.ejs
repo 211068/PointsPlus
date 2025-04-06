@@ -1,14 +1,17 @@
 <body>
-    <h1>Update House Counts</h1>
+    <h1>Update House Points</h1>
     <form action="/submit" method="POST">
         <label>House 1: <input type="text" name="house1" required></label>
         <label>Points: <input type="number" name="count1" min="0" step="1" required></label><br>
+        <label>Color: <input type="color" name="color1" value="#333333" required></label><br>
 
         <label>House 2: <input type="text" name="house2" required></label>
         <label>Points: <input type="number" name="count2" min="0" step="1" required></label><br>
+        <label>Color: <input type="color" name="color2" value="#333333" required></label><br>
 
         <label>House 3: <input type="text" name="house3" required></label>
         <label>Points: <input type="number" name="count3" min="0" step="1" required></label><br>
+        <label>Color: <input type="color" name="color3" value="#333333" required></label><br>
 
         <button type="submit">Submit</button>
     </form>

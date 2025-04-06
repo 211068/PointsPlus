@@ -1,14 +1,17 @@
 [
   {
-    "house": "A",
-    "count": 11
+    "house": "Halberg",
+    "count": 1,
+    "color": "#ff0000"
   },
   {
-    "house": "B",
-    "count": 10
+    "house": "Blake",
+    "count": 2,
+    "color": "#1100ff"
   },
   {
-    "house": "C",
-    "count": 2
+    "house": "Hillary",
+    "count": 3,
+    "color": "#fbff00"
   }
 ]

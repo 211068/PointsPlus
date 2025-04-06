@@ -14,6 +14,7 @@ app.use('/js', express.static(path.join(__dirname, 'public/js')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/data', express.static(path.join(__dirname, 'public/data')));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(expressLayouts);
 app.set('view engine', 'ejs')
@@ -50,12 +51,12 @@ app.post('/submit', (req, res) => {
   console.log(req.body); // Debugging: Log the received form data
 
   try {// Read the form data from the request body
-    const { house1, count1, house2, count2, house3, count3 } = req.body;
+    const { house1, count1, color1, house2, count2, color2, house3, count3, color3 } = req.body;
     // Validate the input data
     const newData = [
-      { house: house1, count: Number(count1) },
-      { house: house2, count: Number(count2) },
-      { house: house3, count: Number(count3) },
+      { house: house1, count: Number(count1), color: color1 },
+      { house: house2, count: Number(count2), color: color2 },
+      { house: house3, count: Number(count3), color: color3 },
     ];
   // Write the new data to the JSON file
     fs.writeFileSync(DATA_FILE, JSON.stringify(newData, null, 2), 'utf8');
