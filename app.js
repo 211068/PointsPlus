@@ -1,4 +1,4 @@
-//variables that are userd throught the program
+//variables that are used throught the program
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const app = express();

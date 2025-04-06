@@ -1,14 +1,14 @@
 [
   {
-    "house": "Blake",
-    "count": 90
+    "house": "A",
+    "count": 11
   },
   {
-    "house": "Halberg",
-    "count": 30
+    "house": "B",
+    "count": 10
   },
   {
-    "house": "Hillary",
-    "count": 40
+    "house": "C",
+    "count": 2
   }
 ]
