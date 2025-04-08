@@ -1,11 +1,13 @@
 # Instructions
 
+
+
 ## Setup
  If you get a script error in PowerShell then run:
 
 # Set-ExecutionPolicy Unrestricted
 
- Run each of the following in turn:
+ Run each of the following in turn in the terminal:
 
 `'npm init -y'`
 

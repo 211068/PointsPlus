@@ -1,11 +1,13 @@
-//variables that are used throught the program
+//Library imports that are used throught the program
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
-const app = express();
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const path = require('path');
-const port = 3000
+
+const port = 5000
+
+const app = express();
 
 //midlleware that is used to shorten the file names when using them in the code
 app.use(express.static('public'));
